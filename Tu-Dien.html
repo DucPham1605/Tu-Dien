@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tu Dien</title>
+    <style>
+        fieldset
+        {
+            background-color: white;
+            width: 500px;
+            length: 700px;
+            padding:32px;
+        }
+
+    </style>
+</head>
+<body>
+<fieldset>
+    <legend><h3>Từ điển Anh Việt</h3></legend>
+    <input type="text" id="text">
+    <input type="button" id="btnTrans" value="Dịch" onclick="trans();">
+    <div id="result" ></div>
+</fieldset>
+
+<script>
+    let eng = ['Zero','Smoke','Scorpion','Rain','Reptile'];
+    let vnm = ['Số không','Khói','Bọ Cạp','Mưa','Thằn lằn'];
+    let result ;
+    //let x = document.getElementById('text').value;
+
+    function trans() {
+        let x = document.getElementById('text').value;
+        for (let i=0;i<eng.length;i++){
+
+            if (x == eng[i]){
+                result = vnm[i];
+                break;
+
+            }
+            else {
+                result ='Từ bạn vừa nhập không có trong từ điển';
+
+            }
+        }
+        document.getElementById('result').innerHTML = result;
+    }
+</script>
+</body>
+</html>
